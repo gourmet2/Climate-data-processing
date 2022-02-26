@@ -55,7 +55,7 @@ for k1 = 1:size(f_f,2)
     tic
     f_s = [char(f_f(2,k1)),'\',char(f_f(1,k1)),'\*.csv'];
     f_s = dir(f_s); f_s = struct2cell(f_s);
-    id = split(f_s(1,:),'.'); %读取每年中需要的站点
+    id = split(f_s(1,:),'.'); 
     id =(id(:,:,1))';
     
     mondata = nan(length(j),12); % a matrix for storing wind speed data
@@ -86,8 +86,8 @@ for k1 = 1:size(f_f,2)
                     mondata_0num(k2,k3) = length(find(meta(j2,17)==0));
                     mondata_obnum(k2,k3) = nanmean(meta(j2,18));
                     lat_info(k2,k3) = mode(meta(j2,3)); %Get the mode of all the latitude data for that month
-                    lon_info(k2,k3) = mode(meta(j2,4)); %得到该月份经纬度的众数
-                    ele_info(k2,k3) = mode(meta(j2,5)); %得到该月份高度的众数
+                    lon_info(k2,k3) = mode(meta(j2,4)); 
+                    ele_info(k2,k3) = mode(meta(j2,5)); 
                 end
             end
         end
